@@ -1,0 +1,187 @@
+@use 'mixins' as *;
+
+.MuiDrawer-root.MuiDrawer-docked.sidebar {
+  flex-shrink: 0;
+}
+
+.sidebar .MuiDrawer-paperAnchorLeft {
+  position: sticky;
+  height: 100vh;
+  width: 300px;
+  box-shadow: none;
+  border: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 0;
+
+  @media screen and (min-width: 1200px) {
+    width: 320px;
+  }
+  @media screen and (min-width: 1600px) {
+    width: 380px;
+  }
+}
+
+.szuresheader {
+  margin-bottom: 30px;
+}
+
+.cimkekContainer {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+
+  .cimke {
+    background: #efeeee;
+    border-radius: 52px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    @media screen and (min-width: 1200px) {
+      font-size: 14px;
+    }
+  }
+
+  .cimkeicon {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  .cimkektorleseicon {
+    cursor: pointer;
+  }
+}
+
+#szures {
+  .MuiOutlinedInput-root {
+    width: 40%;
+  }
+
+  .MuiOutlinedInput-input {
+    padding: 10px 0 10px 10px;
+    font-size: 12px;
+    font-weight: 400;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 14px;
+    }
+    @media screen and (min-width: 1600px) {
+      font-size: 16px;
+    }
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .MuiSlider-root {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    width: 94%;
+    margin-bottom: 20px;
+
+    .MuiSlider-rail,
+    .MuiSlider-track {
+      height: 4px;
+      border-radius: 5px;
+
+      @media screen and (min-width: 1600px) {
+        height: 5px;
+      }
+    }
+    .MuiSlider-thumb {
+      color: white;
+      border: 5px solid #4a00e0;
+      width: 17px;
+      height: 17px;
+      margin-top: 0;
+
+      @media screen and (min-width: 1600px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .MuiSvgIcon-root {
+    font-size: 30px;
+  }
+
+  .MuiRadio-root:not(.Mui-checked) {
+    color: #cdcdcd;
+  }
+
+  .PrivateRadioButtonIcon-root-30 svg {
+    fill: #cdcdcd;
+  }
+  .PrivateRadioButtonIcon-checked-32 svg {
+    fill: #4a00e0;
+  }
+
+  .MuiOutlinedInput-root {
+    background-color: #f9f9f9;
+  }
+
+  .szuresnev {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Work Sans";
+
+    @media screen and (min-width: 1200px) {
+      font-size: 18px;
+    }
+    @media screen and (min-width: 1600px) {
+      font-size: 20px;
+    }
+  }
+
+  .MuiFormControlLabel-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-default);
+
+    @media screen and (min-width: 1200px) {
+      font-size: 14px;
+    }
+    @media screen and (min-width: 1600px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.fejlec__actions {
+  display: flex;
+
+  .MuiBadge-root {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .fejlecContainer {
+    flex-wrap: wrap;
+    padding-bottom: 20px !important;
+
+    .fejlec__actions {
+      flex-basis: 100%;
+      margin-top: 40px;
+      justify-content: space-between;
+    }
+  }
+}
+
+.noMatchingProduct {
+  font-size: 18px;
+  grid-column: 1/-1;
+}

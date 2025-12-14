@@ -1,0 +1,281 @@
+.rendeles_wrapper {
+  p {
+    margin: 0;
+  }
+}
+
+.rendeles_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .card-title {
+    font-weight: 600;
+  }
+}
+
+.rendelesid {
+  margin-left: 20px;
+  color: var(--text-grey);
+}
+
+.MuiAccordion-root.card {
+  padding: 0;
+  border-radius: 20px;
+
+  &::before {
+    display: none;
+  }
+
+  @media screen and (max-width: 500px) {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+  }
+}
+
+.MuiAccordionSummary-root {
+  padding: 20px;
+
+  @media screen and (min-width: 700px) {
+    padding: 20px 30px;
+  }
+}
+
+.MuiAccordionSummary-content {
+  //display: grid;
+  gap: 10px 20px;
+  //grid-template-columns: auto 1fr;
+  //flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @media screen and (min-width: 700px) {
+    //padding: 20px 30px;
+    padding-right: 20px;
+    font-size: 18px;
+  }
+}
+
+.termekAvatars {
+  .MuiAvatarGroup-avatar {
+    border: unset;
+  }
+
+  .MuiAvatar-circle {
+    border: 2px solid #e1e1e1;
+    width: 35px;
+    height: 35px;
+
+    @media screen and (min-width: 700px) {
+      width: 45px;
+      height: 45px;
+    }
+  }
+  .MuiAvatar-colorDefault {
+    color: #646464;
+    background: #e1e1e1;
+  }
+}
+
+.rendelesTitleAndAr {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @media screen and (min-width: 700px) {
+    padding: 0 20px;
+  }
+}
+
+.rendelesTitle {
+  width: 100%;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.rendelesAr {
+  padding-left: 40px;
+  flex: 0 0 auto;
+
+  @media screen and (max-width: 1200px) {
+    padding-left: 0;
+    padding-top: 10px;
+  }
+}
+
+.statusz {
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 40px;
+  padding: 10px 20px;
+
+  @media screen and (min-width: 700px) {
+    font-size: 16px;
+  }
+}
+
+.kiszallitas_alatt {
+  background: #fff4e4;
+  color: #ff9900;
+}
+
+.kezbesitve {
+  color: #00a638;
+  background: rgba(0, 166, 56, 0.08);
+}
+
+.MuiAccordionDetails-root {
+  flex-direction: column;
+  padding: 0px;
+  
+  @media screen and (max-width: 700px) {
+    font-size: 15px;
+  }
+
+  > div {
+    display: flex;
+    padding: 50px;
+
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+      padding: 30px;
+    }
+  }
+}
+
+.rendeles__section-title {
+  color: var(--text-grey);
+  margin-right: 30px;
+  margin-bottom: 30px;
+  flex: 0 0 auto;
+  font-size: 18px;
+
+  @media screen and (min-width: 700px) {
+    //font-size: 20px;
+    width: 20%;
+  }
+}
+
+.rendeles__adatok {
+  background: var(--color-background-secondary);
+
+  .dataCard__contentGrid {
+    gap: 15px 30px;
+  }
+}
+
+.termek_wrapper {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  gap: 60px;
+  padding-right: 40px;
+  @media screen and (max-width: 700px) {
+    gap: 40px;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+
+  .termek {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+    .imgWrapper {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      @media screen and (min-width: 700px) {
+        width: 60px;
+        height: 60px;
+      }
+      @media screen and (min-width: 1400px) {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    .nevEsArWrapper {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 0 40px;
+
+      @media screen and (max-width: 700px) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 20px;
+      }
+    }
+
+    .nev {
+      font-weight: 600;
+      margin: 0px auto 10px 0px;
+    }
+
+    .darab {
+      flex: 0 0 auto;
+    }
+
+    .ar {
+      flex: 0 0 auto;
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+}
+
+.MuiAccordion-root.Mui-disabled {
+  background-color: var(--color-background);
+}
+
+.nincs_rendeles.card {
+  margin-top: 20px !important;
+  padding: 30px 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @media screen and (min-width: 600px) {
+    flex-direction: row-reverse;
+    margin-top: 50px !important;
+  }
+  
+  p {
+    width: 100%;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 50px;
+    @media screen and (min-width: 600px) {
+      text-align: center;
+      margin-bottom: 0;
+      margin-left: 30px;
+    }
+    @media screen and (min-width: 1400px) {
+      font-size: 20px;
+    }
+  }
+  img {
+    height: 200px;
+    margin-left: auto;
+  }
+}

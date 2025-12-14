@@ -1,0 +1,93 @@
+@use 'mixins' as *;
+
+.kategoriak {
+  position: relative;
+  background-color: var(--color-background);
+
+  @media screen and (max-width: 700px) {
+    overflow: overlay;
+  }
+}
+
+.kategoriakWrapper {
+  display: grid;
+  --repeat: 3;
+  grid-template-columns: repeat(var(--repeat), minmax(200px, 1fr));
+  gap: 40px;
+  padding: 100px 0 80px 0;
+
+  @media (max-width: 700px) {
+    --repeat: auto-fit;
+    padding: 80px 0 100px 0;
+    gap: 20px;
+  }
+}
+
+.kategoriaCard {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-background-dark);
+  padding: 20px;
+  border-radius: 20px;
+  transition: background-color .1s;
+
+  &:hover {
+    background-color: var(--color-background-secondary);
+  }
+
+  .imgWrapper {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    width: 30px;
+    height: 20px;
+
+    @media screen and (min-width: 700px) {
+      width: 60px;
+      height: 40px;
+    }
+    
+    @media screen and (min-width: 1600px) {
+      width: 80px;
+      height: 55px;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .kategoria_nev {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 16px;
+    }
+    @media screen and (min-width: 1600px) {
+      font-size: 18px;
+     }
+  }
+}
+
+.square {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  > svg {
+    height: 100%;
+    width: auto;
+  }
+
+  span {
+    position: absolute;
+  }
+}

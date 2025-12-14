@@ -1,0 +1,141 @@
+#header {
+  .MuiDrawer-modal {
+    z-index: 1000 !important;
+  }
+}
+
+.MuiAppBar-root {
+  background-color: var(--color-background);
+  box-shadow: none;
+
+  &.elevated {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.header__wrapper {
+  display: flex;
+  //justify-content: space-between;
+  padding: 15px 30px;
+  @media screen and (max-width: 500px) {
+    padding: 10px 25px;
+  }
+
+  > div {
+    display: flex;
+    flex: 1 1 auto;
+  }
+
+  .MuiButton-label {
+    color: var(--text-default-soft);
+    font-size: 14px;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 16px;
+    }
+    @media screen and (min-width: 1600px) {
+      font-size: 18px;
+     }
+  }
+  
+  svg {
+    stroke: var(--text-default-soft);
+    width: 22px;
+    height: 22px;
+    stroke-width: 2.5;
+    
+    @media screen and (min-width: 700px) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+.header__brand {
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  margin-right: 10px;
+
+  > img {
+    margin-right: 20px;
+
+    @media screen and (max-width: 500px) {
+      width: 35px;
+    }
+  }
+
+  h5 {
+    font-size: 18px;
+    font-weight: 700;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 22px;
+    }
+    @media screen and (min-width: 1600px) {
+     font-size: 24px;
+    }
+  }
+}
+.kategoriakDropdownButton {
+  margin: 0 auto;
+}
+.header__buttons-right {
+  justify-content: flex-end;
+  //for the badge not to overflow
+  z-index: 0;
+
+  > *:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.kategoriak-mobile__FiokButton {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-background-secondary);
+  box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.1);
+
+  .MuiButton-root.big {
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 25px;
+    border-radius: 0;
+
+    .MuiButton-label {
+      font-weight: 700;
+    }
+  }
+}
+
+
+#fiokDropdown {
+  .loggedInAs {
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 16px;
+    }
+    @media screen and (min-width: 1600px) {
+      font-size: 18px;
+    }
+  }
+  button {
+    padding: 9px 23px;
+    font-weight: 500;
+
+    @media screen and (min-width: 1200px) {
+      padding: 10px 25px;
+    }
+    @media screen and (min-width: 1600px) {
+      padding: 15px 30px;
+    }
+  }
+  .MuiButton-label {
+    font-weight: 500;
+  }
+}

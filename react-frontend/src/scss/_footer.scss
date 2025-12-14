@@ -1,0 +1,38 @@
+.footer {
+  background-color: var(--color-primary-dark);
+  //box-shadow: inset 0px 10px 15px -15px rgba(0,0,0,0.4);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  max-width: 100%;
+
+  @media screen and (max-width: 600px) {
+    padding: 15px 25px;
+  }
+
+  * {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text-inverse);
+  }
+
+  p {
+    color: var(--text-inverse-soft);
+    font-size: 16px;
+  }
+
+  > div {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+
+    @media screen and (min-width: 600px) {
+      width: auto;
+    }
+  }
+}

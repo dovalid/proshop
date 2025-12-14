@@ -1,0 +1,168 @@
+#Fiok {
+  @media screen and (max-width: 1024px) {
+    padding-bottom: 100px;
+  }
+
+  .MuiDrawer-paperAnchorLeft {
+    padding: 70px 0px;
+  }
+
+  .MuiTypography-subtitle1 {
+    margin-top: 20px;
+  }
+
+  .loggedInAs {
+    padding: 0 45px;
+    margin-bottom: 70px;
+  }
+
+  .MuiContainer-maxWidthMd {
+    overflow: hidden;
+  }
+
+  .card {
+    margin-bottom: 80px;
+
+    @media screen and (max-width: 500px) {
+      margin: 0 -45px;
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.dataCard.card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+
+  > * {
+    padding: 20px;
+  }
+
+  p {
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+.dataCard__contentGrid {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: start;
+  gap: 30px;
+
+  p {
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+.dataCard__buttons {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-left: auto;
+
+  > *:not(:first-child) {
+    margin-left: 10px;
+  }
+
+  @media screen and (min-width: 800px) {
+    flex-direction: column-reverse;
+
+    > *:not(:first-child) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.pageLink {
+  button.MuiButton-root {
+    width: 100%;
+    justify-content: left;
+    padding: 20px 45px;
+    border-radius: 0;
+
+    &:hover {
+      background-color: var(--color-background-secondary);
+    }
+  }
+
+  &.active button.MuiButton-root {
+    background-color: var(--color-background-primary);
+
+    .MuiButton-label {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.logOut .MuiButton-label {
+  color: rgb(204, 35, 35);
+}
+
+.termekFeltoltesCard {
+  @media screen and (max-width: 650px) {
+    margin-top: 30px !important;
+  }
+  .termekAdatok {
+    @media screen and (max-width: 500px) {
+      padding: 0 20px;
+    }
+  }
+}
+
+.termekAdatok {
+  .inputsContainer {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+
+    .spanFull {
+      grid-column: span 4;
+    }
+    .span3 {
+      grid-column: span 3;
+    }
+
+    @media screen and (max-width: 800px) {
+      gap: 40px 20px;
+    }
+    @media screen and (max-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: row dense;
+
+      > div,
+      .spanFull,
+      .span3 {
+        grid-column: span 2;
+      }
+      .spanHalf,
+      .spanOnMobile {
+        grid-column: span 1;
+      }
+    }
+  }
+  .buttonContainer {
+    padding: 0 0;
+
+    button {
+      width: auto;
+    }
+  }
+}
+
+.MuiBottomNavigation-root {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 900;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.MuiBottomNavigationAction-label {
+  font-weight: 600;
+}

@@ -1,0 +1,444 @@
+@use 'mixins' as *;
+@use "header";
+@use "footer";
+@use "search";
+@use "modal";
+@use "kategoriak";
+@use "kosar";
+@use "kezdooldal";
+@use "termekGrid";
+@use "termekkategoria";
+@use "termekoldal";
+@use 'fiok';
+@use 'rendeleseim';
+@use 'rendeles';
+
+:root {
+  --color-primary: rgba(74, 0, 224, 1);
+  --color-primary-dark: #221935;
+  --color-background: white;
+  --color-background-dark: #f0f0f0;
+  --color-background-light: #f5f5f5;
+  --color-background-primary: #e6ebfc;
+  --color-background-secondary: #f7f7fc;
+  --color-red: #EB5757;
+  --text-default: black;
+  --text-default-soft: #575757;
+  --text-grey: #888888;
+  --text-inverse: white;
+  --text-inverse-soft: rgba(255, 255, 255, 0.8);
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: none;
+}
+
+.appWrapper {
+  height: 100vh;
+  overflow: auto;
+  @include appScrollbar();
+
+}
+.hiddenOverflow {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+main {
+  padding-top: 80px;
+  min-height: 100vh;
+
+  @media screen and (max-width: 600px) {
+    padding-top: 40px;
+  }
+}
+
+main.mainWithSidebar {
+  padding: 0;
+  margin-top: 80px;
+  display: flex;
+  background: linear-gradient(
+    var(--color-background) 0%,
+    var(--color-background-light) 60vh
+  );
+}
+
+.title {
+  font-size: 30px;
+
+  @media screen and (min-width: 700px) {
+    font-size: 34px;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 40px;
+  }
+  @media screen and (min-width: 1600px) {
+    font-size: 46px;
+  }
+}
+
+.section-label {
+  font-family: "Work Sans";
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.card {
+  background-color: var(--color-background);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.backgroundPattern {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    height: 100%;
+    width: 100%;
+    background-image: url('./assets/hatter_pattern.svg');
+    background-position: right top;
+    z-index: -1;
+    animation: elevate .5s;
+    animation-delay: .7s;
+    animation-fill-mode: both;
+    
+    @media screen and (max-width: 800px) {
+      left: 0;
+    }
+  }
+}
+
+@keyframes elevate {
+  0%   { transform: translate(-30px, -30px); }
+  100% { transform: 0; }
+}
+
+.card-title {
+  font-size: 19px;
+  margin: 30px 0;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 20px;
+  }
+  @media screen and (min-width: 1600px) {
+    font-size: 22px;
+  }
+}
+
+.fejlecContainer {
+  padding: 60px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width: 600px) {
+    padding-top: 20px;
+  }
+}
+
+button,
+.MuiTypography-h1,
+.MuiTypography-h2,
+.MuiTypography-h3,
+.MuiTypography-h4,
+.MuiTypography-h5,
+.MuiTypography-h6 {
+  font-family: "Work Sans";
+  font-weight: 700;
+}
+
+.MuiTypography-body1 {
+  font-size: 15px;
+
+  @media screen and (min-width: 1400px) {
+    font-size: 16px;
+  }
+}
+
+.inputsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 20px;
+  padding-bottom: 40px;
+
+  > div {
+    grid-column: span 2;
+  }
+
+  .spanHalf {
+    grid-column: unset;
+  }
+
+  .MuiTypography-root {
+    grid-column: 1/-1;
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 550px) {
+    grid-template-columns: 1fr;
+    
+    > div {
+      grid-column: unset;
+    }
+  }
+}
+
+.MuiOutlinedInput-root {
+  background-color: var(--color-background);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.MuiButton-label {
+  font-weight: 700;
+  text-transform: none;
+  font-size: 14px;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1600px) {
+    font-size: 18px;
+  }
+
+  .MuiCircularProgress-root {
+    width: 1em !important;
+    height: 1em !important;
+    position: absolute;
+    left: 20px;
+  }
+  .MuiCircularProgress-circle {
+    stroke-width: 6;
+  }
+}
+.MuiTouchRipple-root {
+  color: #9d9dbd;
+}
+
+.MuiButton-root {
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: opacity 0.2s;
+
+  &:not(.MuiButton-textSizeSmall) {
+    padding: 10px 30px;
+  }
+
+  &.big {
+    padding: 15px 40px;
+  }
+
+  &.primary {
+    background-color: var(--color-primary);
+
+    .MuiButton-label {
+      color: white;
+      font-weight: 700;
+    }
+
+    .MuiTouchRipple-root {
+      color: rgb(255 255 255 / 87%);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--color-background-primary);
+
+    .MuiButton-label {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: unset;
+    background-color: #0a00e0 !important;
+    opacity: 0.3;
+  }
+}
+
+.MuiBadge-colorSecondary {
+  color: var(--color-primary);
+  background-color: var(--color-background-primary);
+}
+
+.hasIcon {
+  display: inline-flex;
+  align-items: center;
+
+  svg, span.icon {
+    color: inherit;
+    margin-right: 10px;
+  }
+}
+.hasIcon--right svg {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+.MuiButton-contained {
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.MuiIconButton-root.circleButton {
+  background-color: var(--color-background-light);
+  color: var(--text-default-soft);
+}
+@media (hover: none) {
+  .MuiIconButton-root:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}
+.MuiIconButton-root.iconButton--compensatePadding {
+  margin: -12px;
+}
+
+.MuiDialog-paperWidthSm {
+  max-width: 500px;
+  width: 100%;
+}
+.MuiPaper-rounded {
+  border-radius: 10px;
+}
+
+.MuiInputBase-root {
+  border-radius: 10px;
+  .MuiOutlinedInput-input {
+    font-weight: 600;
+  }
+
+  fieldset {
+    border-width: 2px;
+  }
+}
+
+.MuiSnackbar-anchorOriginTopRight {
+  top: 80px;
+}
+.MuiSnackbarContent-root {
+  padding: 10px 30px;
+  font-weight: 700;
+  flex-wrap: nowrap;
+  border-radius: 30px 0 30px 30px;
+  background-color: var(--color-background-primary);
+  color: var(--color-primary);
+  box-shadow: 0px 2px 6px rgba(0, 11, 73, 0.2);
+}
+
+.MuiSnackbar-root.success .MuiSnackbarContent-root {
+  background-color: #f2f9f2;
+  color: green;
+  box-shadow: 0px 2px 6px rgba(6, 73, 0, 0.2);
+}
+
+
+
+.MuiDrawer-paper {
+  will-change: transform;
+}
+
+.MuiDrawer-root .lightScrollbar {
+  padding: 70px 30px;
+  height: 100vh;
+  //margin-right: 5px;
+  @include lightScrollbar(rgba(0, 0, 0, 0.1), true);
+
+  > * {
+      color: var(--text-default);
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 70px 35px;
+  }
+  @media screen and (min-width: 1600px) {
+    padding: 70px 45px;
+  }
+}
+
+.MuiTooltip-tooltip {
+  background-color: #221935;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+.MuiTooltip-arrow {
+  color: #221935;
+}
+
+.MuiContainer-root {
+  padding: 0 25px;
+}
+@media screen and (min-width: 700px) {
+  .MuiContainer-root.MuiContainer-maxWidthMd {
+    padding: 0 60px;
+  }
+}
+@media screen and (min-width: 996px) {
+  .MuiContainer-root {
+    max-width: 900px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .MuiContainer-root {
+    max-width: 1000px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .MuiContainer-root {
+    max-width: 1150px;
+  }
+}
+@media screen and (min-width: 1450px) {
+  .MuiContainer-root {
+    max-width: 1300px;
+  }
+  .MuiContainer-root.MuiContainer-maxWidthMd {
+    padding: 0 110px;
+    max-width: 1350px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .MuiContainer-root {
+    max-width: 1450px;
+  }
+}

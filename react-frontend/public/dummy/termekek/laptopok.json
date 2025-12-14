@@ -1,0 +1,105 @@
+[
+  {
+    "id": "301",
+    "nev": "ASUS ROG Strix G15",
+    "ar": 489990,
+    "garancia": 2,
+    "gyartoNev": "ASUS",
+    "kategoriaNev": "Laptop",
+    "kepek": ["../images/termekek/1146501477.asus-rog-strix-g15-g513rc-hn088.jpg", "../images/termekek/985037916.asus-rog-strix-g15-g513rw-hf197.jpg"],
+    "leiras": "Ryzen kraft, RTX power, gamingre született.",
+    "raktaron": 6,
+    "specifikaciok": [
+      { "id": "Súly", "ertek": "2250" },
+      { "id": "Operációs rendszer", "ertek": "Windows 11" },
+      { "id": "Processzor", "ertek": "Ryzen 7 6800H" },
+      { "id": "Videokártya", "ertek": "RTX 3060" },
+      { "id": "RAM", "ertek": "16" },
+      { "id": "Háttértár", "ertek": "512" },
+      { "id": "Kijelző méret", "ertek": "15.6" },
+      { "id": "Kijelző felbontás", "ertek": "1920 x 1080" }
+    ]
+  },
+  {
+    "id": "302",
+    "nev": "Dell XPS 13 Plus",
+    "ar": 679990,
+    "garancia": 2,
+    "gyartoNev": "Dell",
+    "kategoriaNev": "Laptop",
+    "kepek": ["../images/termekek/91MXLpouhoL._AC_SL1500_.jpg", "../images/termekek/1188419179.dell-xps-13-plus-9320-9320-339800.jpg"],
+    "leiras": "Ultrabook elit, flexelős dizájnnal.",
+    "raktaron": 3,
+    "specifikaciok": [
+      { "id": "Súly", "ertek": "1200" },
+      { "id": "Operációs rendszer", "ertek": "Windows 11" },
+      { "id": "Processzor", "ertek": "Intel i7-1360P" },
+      { "id": "RAM", "ertek": "16" },
+      { "id": "Háttértár", "ertek": "1TB" },
+      { "id": "Kijelző méret", "ertek": "13.4" },
+      { "id": "Kijelző felbontás", "ertek": "2880 x 1920" }
+    ]
+  },
+  {
+    "id": "303",
+    "nev": "Lenovo Legion 5 Pro",
+    "ar": 579990,
+    "garancia": 3,
+    "gyartoNev": "Lenovo",
+    "kategoriaNev": "Laptop",
+    "kepek": ["../images/termekek/1357309492.lenovo-legion-pro-5-83df00g4hv.jpg", "../images/termekek/s444ye7sqwg6rv1b8on54vm77eopra543125.avif"],
+    "leiras": "Brutál gamer teljesítmény, nulla kifogás.",
+    "raktaron": 4,
+    "specifikaciok": [
+      { "id": "Súly", "ertek": "2450" },
+      { "id": "Operációs rendszer", "ertek": "Windows 11" },
+      { "id": "Processzor", "ertek": "Ryzen 7 5800H" },
+      { "id": "Videokártya", "ertek": "RTX 3070" },
+      { "id": "RAM", "ertek": "16" },
+      { "id": "Háttértár", "ertek": "1TB" },
+      { "id": "Kijelző méret", "ertek": "16" },
+      { "id": "Kijelző felbontás", "ertek": "2560 x 1600" }
+    ]
+  },
+  {
+    "id": "304",
+    "nev": "Apple MacBook Air M2 13\"",
+    "ar": 499990,
+    "garancia": 1,
+    "gyartoNev": "Apple",
+    "kategoriaNev": "Laptop",
+    "kepek": ["../images/termekek/ASSET_MMS_146646310.webp", "../images/termekek/res_38a56f7090b3bfdee5edb28a1654e22e.avif"],
+    "leiras": "Csendes, gyors, ultrakönnyű. M2 megint odacsap.",
+    "raktaron": 5,
+    "specifikaciok": [
+      { "id": "Súly", "ertek": "1240" },
+      { "id": "Operációs rendszer", "ertek": "macOS" },
+      { "id": "Processzor", "ertek": "Apple M2" },
+      { "id": "RAM", "ertek": "8" },
+      { "id": "Háttértár", "ertek": "256" },
+      { "id": "Kijelző méret", "ertek": "13.6" },
+      { "id": "Kijelző felbontás", "ertek": "2560 x 1664" }
+    ]
+  },
+  {
+    "id": "305",
+    "nev": "HP Omen 17",
+    "ar": 699990,
+    "garancia": 2,
+    "gyartoNev": "HP",
+    "kategoriaNev": "Laptop",
+    "kepek": ["../images/termekek/HP-OMEN-17-QHD-240-Hz-i7-13700HX-32-GB-DDR5-1-TB-SSD-NVMe-RTX-4090-16-GB-Win11.jpeg", "../images/termekek/1334152615.hp-omen-17-db0453ng-a5cw6ea.jpg"],
+    "leiras": "Hatalmas kijelző, még nagyobb power.",
+    "raktaron": 2,
+    "specifikaciok": [
+      { "id": "Súly", "ertek": "2950" },
+      { "id": "Operációs rendszer", "ertek": "Windows 11" },
+      { "id": "Processzor", "ertek": "Intel i9-12900H" },
+      { "id": "Videokártya", "ertek": "RTX 3080" },
+      { "id": "RAM", "ertek": "32" },
+      { "id": "Háttértár", "ertek": "1TB" },
+      { "id": "Kijelző méret", "ertek": "17.3" },
+      { "id": "Kijelző felbontás", "ertek": "2560 x 1440" }
+    ]
+  }
+]

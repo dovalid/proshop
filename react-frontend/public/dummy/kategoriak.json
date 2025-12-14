@@ -1,0 +1,112 @@
+[
+  {
+    "nev": "Laptopok",
+    "kep": "../images/kategoriak/laptop.png",
+    "spec": [
+      { "nev": "RAM", "tipus": "szam", "mertekegyseg": "GB" },
+      { "nev": "Képernyőméret", "tipus": "szam", "mertekegyseg": "inch" },
+      { "nev": "Processzor", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Tárhely", "tipus": "szam", "mertekegyseg": "GB" },
+      { "nev": "Operációs rendszer", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Grafikus kártya", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Akkumulátor üzemidő", "tipus": "szam", "mertekegyseg": "óra" }
+    ]
+  },
+  {
+    "nev": "Mobiltelefonok",
+    "kep": "../images/kategoriak/mobil.png",
+    "spec": [
+      { "nev": "Képernyőméret", "tipus": "szam", "mertekegyseg": "inch" },
+      { "nev": "RAM", "tipus": "szam", "mertekegyseg": "GB" },
+      { "nev": "Tárhely", "tipus": "szam", "mertekegyseg": "GB" },
+      { "nev": "Akkumulátor", "tipus": "szam", "mertekegyseg": "mAh" },
+      { "nev": "Kamera (fő)", "tipus": "szam", "mertekegyseg": "MP" },
+      { "nev": "Dual SIM", "tipus": "boolean", "mertekegyseg": null },
+      { "nev": "5G támogatás", "tipus": "boolean", "mertekegyseg": null }
+    ]
+  },
+  {
+    "nev": "Monitorok",
+    "kep": "../images/kategoriak/monitor.png",
+    "spec": [
+      { "nev": "Méret", "tipus": "szam", "mertekegyseg": "inch" },
+      { "nev": "Felbontás", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Paneltípus", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Frissítési ráta", "tipus": "szam", "mertekegyseg": "Hz" },
+      { "nev": "HDR", "tipus": "boolean", "mertekegyseg": null },
+      { "nev": "Csatlakozók", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Állvány állítható", "tipus": "boolean", "mertekegyseg": null }
+    ]
+  },
+  {
+    "nev": "Asztali PC-k",
+    "kep": "../images/kategoriak/pc.png",
+    "spec": [
+      { "nev": "Processzor", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "RAM", "tipus": "szam", "mertekegyseg": "GB" },
+      { "nev": "Videókártya", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Tárhely", "tipus": "szam", "mertekegyseg": "GB" },
+      { "nev": "Háttértár típusa", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Tápegység", "tipus": "szam", "mertekegyseg": "W" },
+      { "nev": "Ház méret", "tipus": "szoveg", "mertekegyseg": null }
+    ]
+  },
+  {
+    "nev": "Tabletek",
+    "kep": "../images/kategoriak/tablet.png",
+    "spec": [
+      { "nev": "Képernyőméret", "tipus": "szam", "mertekegyseg": "inch" },
+      { "nev": "RAM", "tipus": "szam", "mertekegyseg": "GB" },
+      { "nev": "Tárhely", "tipus": "szam", "mertekegyseg": "GB" },
+      { "nev": "Akkumulátor", "tipus": "szam", "mertekegyseg": "mAh" },
+      { "nev": "SIM támogatás", "tipus": "boolean", "mertekegyseg": null },
+      { "nev": "Mobilinternet (4G/5G)", "tipus": "boolean", "mertekegyseg": null },
+      { "nev": "Kamera", "tipus": "szam", "mertekegyseg": "MP" }
+    ]
+  },
+  {
+    "nev": "Fülesek",
+    "kep": "../images/kategoriak/fules.png",
+    "spec": [
+      { "nev": "Típus", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Csatlakozás", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Vezeték nélküli", "tipus": "boolean", "mertekegyseg": null },
+      { "nev": "Üzemidő", "tipus": "szam", "mertekegyseg": "óra" },
+      { "nev": "Mikrofon", "tipus": "boolean", "mertekegyseg": null }
+    ]
+  },
+  {
+    "nev": "Billentyűzetek",
+    "kep": "../images/kategoriak/bill.png",
+    "spec": [
+      { "nev": "Típus", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Kiosztás", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Csatlakozás", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Vezeték nélküli", "tipus": "boolean", "mertekegyseg": null },
+      { "nev": "RGB világítás", "tipus": "boolean", "mertekegyseg": null }
+    ]
+  },
+  {
+    "nev": "Egerek",
+    "kep": "../images/kategoriak/eger.webp",
+    "spec": [
+      { "nev": "Érzékenység", "tipus": "szam", "mertekegyseg": "DPI" },
+      { "nev": "Csatlakozás", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Vezeték nélküli", "tipus": "boolean", "mertekegyseg": null },
+      { "nev": "Szenzor típusa", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Extra gombok", "tipus": "szam", "mertekegyseg": null }
+    ]
+  },
+  {
+    "nev": "Okosórák",
+    "kep": "../images/kategoriak/ora.png",
+    "spec": [
+      { "nev": "Kijelző méret", "tipus": "szam", "mertekegyseg": "inch" },
+      { "nev": "Vízállóság", "tipus": "szoveg", "mertekegyseg": null },
+      { "nev": "Akkumulátor üzemidő", "tipus": "szam", "mertekegyseg": "nap" },
+      { "nev": "GPS", "tipus": "boolean", "mertekegyseg": null },
+      { "nev": "Pulzusmérés", "tipus": "boolean", "mertekegyseg": null },
+      { "nev": "Anyag", "tipus": "szoveg", "mertekegyseg": null }
+    ]
+  }
+]

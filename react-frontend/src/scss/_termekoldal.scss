@@ -1,0 +1,399 @@
+@use "mixins" as *;
+
+.termekPage,
+.rendeles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  //border-radius: 20px;
+  background-color: var(--color-background);
+  overflow: auto;
+  overflow-x: hidden;
+  z-index: 10;
+
+  @include appScrollbar();
+}
+
+.termekPage {
+  padding-top: 0;
+}
+
+.termekInner {
+  position: relative;
+  padding-top: 80px;
+  @media screen and (max-width: 600px) {
+    padding-top: 40px;
+  }
+}
+
+.termek__controlBar {
+  color: var(--text-default-soft);
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 15px;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1600px) {
+    font-size: 18px;
+  }
+}
+
+.termekGrid .MuiContainer-root {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+
+  @media screen and (min-width: 600px) {
+    gap: 80px;
+    padding-bottom: 80px;
+  }
+  @media screen and (min-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (min-width: 1600px) {
+    gap: 110px;
+    padding-bottom: 100px;
+  }
+  .card {
+    min-height: 500px;
+    border-radius: 15px;
+    @media screen and (max-width: 600px) {
+      min-height: 400px;
+      margin: 0 -25px;
+      border-radius: 0;
+    }
+  }
+}
+
+.termekBottom {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(
+      var(--color-background) 0px,
+      var(--color-background-light) 200px
+    );
+    z-index: -1;
+  }
+
+  .MuiContainer-root {
+    padding-bottom: 160px;
+  }
+}
+
+.termekKepek {
+  display: flex;
+  align-items: center;
+
+  > div {
+    width: 100%;
+  }
+}
+.termekKepek__main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  margin: 0 -25px;
+
+  @media screen and (min-width: 500px) {
+    margin: 0;
+  }
+  @media screen and (min-width: 1200px) {
+    height: 290px;
+  }
+  @media screen and (min-width: 1600px) {
+    height: 400px;
+  }
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+.termekKepek__prevBtn {
+  position: absolute;
+  left: 0;
+}
+.termekKepek__nextBtn {
+  position: absolute;
+  right: 0;
+}
+.termekKepek__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.MuiTypography-root.reszletek_cim {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 700px) {
+    margin-bottom: 45px;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 24px;
+  }
+  @media screen and (min-width: 1600px) {
+    font-size: 28px;
+  }
+}
+.MuiTypography-body1.reszletek_leiras {
+  @media screen and (min-width: 1600px) {
+    font-size: 18px;
+  }
+}
+
+.termek__tags {
+  margin-top: 20px;
+
+  p {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-default-soft);
+    font-weight: 600;
+    margin: 10px 0;
+    @media screen and (max-width: 600px) {
+      font-size: 14px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+}
+.reszletek_ar {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 35px 0;
+
+  @media screen and (min-width: 700px) {
+    margin: 50px 0;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 28px;
+  }
+  @media screen and (min-width: 1600px) {
+    font-size: 32px;
+  }
+}
+.MuiButtonGroup-root {
+  display: inline-flex;
+  border-radius: 10px;
+  box-shadow: none;
+  background-color: var(--color-background-dark);
+  align-items: center;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+
+    .MuiButton-root.big {
+      width: 100%;
+    }
+  }
+}
+
+.mennyisegControls {
+  display: flex;
+  background-color: var(--color-background-dark);
+  padding: 0px 10px;
+
+  .MuiIconButton-root:hover {
+    background: unset;
+  }
+}
+
+.szamlalo {
+  font-size: 17px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  min-width: 0;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 18px;
+  }
+  @media screen and (min-width: 1600px) {
+    font-size: 20px;
+  }
+}
+
+.termekErtekelesek .card {
+  padding: 35px 40px;
+  display: flex;
+  @media screen and (max-width: 600px) {
+    padding: 35px 30px;
+  }
+}
+.ertekelesek {
+  width: 100%;
+}
+.ertekelesek--empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  img {
+    margin-left: auto;
+    width: 60%;
+  }
+}
+.ertekelesek__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ertekelesek__csillagok_container {
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.ertekelesek__szam_container {
+  font-weight: bold;
+  font-size: 24px;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 26px;
+  }
+  @media screen and (min-width: 1600px) {
+    font-size: 32px;
+  }
+}
+.ertekeles {
+  background: var(--color-background-secondary);
+  border-radius: 10px;
+  padding: 30px;
+  margin: 25px 0;
+}
+
+.addErtekelesWrapper {
+  padding: 40px 0;
+  margin-bottom: auto;
+}
+
+#addCsillagErtekeles {
+  margin-bottom: 20px;
+}
+
+#addCsillagErtekeles .CsillagErtekelesIndividual {
+  flex-grow: 1;
+}
+
+.termekSpecifikacio .card {
+  padding: 0;
+}
+#specifikacio_container {
+  min-height: 500px;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: max-height 0.3s;
+}
+.specifikacio {
+  padding: 20px 40px;
+  width: 100%;
+
+  @media screen and (max-width: 1200px) {
+    padding: 20px 30px;
+  }
+
+  &:nth-child(even) {
+    background-color: var(--color-background-secondary);
+  }
+
+  .tooltip_specifikacio_container {
+    display: flex;
+
+    span {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+  }
+}
+.specifikacio_ertek {
+  font-weight: 600;
+}
+.teljes_specifikacio {
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  font-weight: 400;
+  box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.05);
+  background-color: var(--color-background);
+  border-radius: 0 0 15px 15px;
+
+  .MuiButton-root {
+    width: 100%;
+    border-radius: 0;
+    border-radius: 0 0 10px 10px;
+    padding: 15px 0 !important;
+
+    .MuiButton-label {
+      font-weight: 600;
+      font-size: 14px;
+
+      @media screen and (min-width: 1600px) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.editTermekDrawer .MuiDrawer-paper {
+  width: 50vw;
+
+  .lightScrollbar:hover {
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .termekAdatok {
+    margin-top: 60px;
+  }
+
+  .uppercase {
+    font-weight: 800;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 70vw;
+  }
+  @media screen and (max-width: 800px) {
+    width: 100vw;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirmationDialog .MuiDialog-paper {
+  padding: 10px;
+
+  .MuiDialogActions-root {
+    padding: 16px;
+  }
+  .modal__error {
+    margin-bottom: 0;
+  }
+}
