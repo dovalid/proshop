@@ -1,5 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import Kategoriak from '../Components/Kategoriak';
+import { API_BASE } from '../config';
 import TermekCard, { TermekCardLoader } from '../Components/TermekCard';
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container';
@@ -14,7 +15,7 @@ export default function Kezdooldal() {
   useEffect(() => {
     document.getElementsByClassName("appWrapper")[0].scrollTo({ top: 0 });
     
-    fetch('https://proshopwebshop2.herokuapp.com/api/get15')
+    fetch(`${API_BASE}/get15`)
     .then(response => response.json())
     .then((jsonData) => {
       setTermekek(jsonData);

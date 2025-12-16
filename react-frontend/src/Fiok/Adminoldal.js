@@ -14,6 +14,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import Collapse from "@material-ui/core/Collapse";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { IconAlertCircle } from "tabler-icons";
+import { API_BASE } from '../config';
 
 export default function Termekfeltoltes({ showSnack }) {
   return (
@@ -60,7 +61,7 @@ export function TermekForm({
 
   useEffect(() => {
     if(defaultSpecifikaciok) {      
-      Promise.all(defaultSpecifikaciok.map(spec => (fetch(`https://proshopwebshop2.herokuapp.com/api/spec_values/` + values.kategoriaNev + `/${ spec.nev }`)).then(response => response.json())))
+      Promise.all(defaultSpecifikaciok.map(spec => (fetch(`${API_BASE}/spec_values/` + values.kategoriaNev + `/${ spec.nev }`)).then(response => response.json())))
         .then(responseArr => {
           responseArr.forEach((item, i) => {
             defaultSpecifikaciok[i].lehetseges_ertekek = item.map(i => ({ value: i }));
@@ -81,10 +82,10 @@ export function TermekForm({
 
   const handleKategoriaSelect = (event) => {
     handleChange("kategoriaNev")(event);
-    fetch(`https://proshopwebshop2.herokuapp.com/api/product_cat_spec/` + event.target.value)
+    fetch(`${API_BASE}/product_cat_spec/` + event.target.value)
         .then(response => response.json())
         .then(data => {
-          Promise.all(data.map(spec => (fetch(`https://proshopwebshop2.herokuapp.com/api/spec_values/` + event.target.value + `/${ spec.nev }`)).then(response => response.json())))
+          Promise.all(data.map(spec => (fetch(`${API_BASE}/spec_values/` + event.target.value + `/${ spec.nev }`)).then(response => response.json())))
             .then(responseArr => {
               responseArr.forEach((spec, i) => {
                 responseArr[i].forEach((spec, j) => {

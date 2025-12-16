@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from 'react';import Dialog from '@material-ui/core/Dialog';
+import { API_BASE } from '../config';
 import { UserContext } from "../Providers/UserContext";
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -81,7 +82,7 @@ export default function LoginModal({ isOpen, setOpen, showSnack }) {
     event.preventDefault();
     setLoading(true);
 
-    let api = "https://proshopwebshop2.herokuapp.com/api/";
+    let api = API_BASE + "/";
     let successMsg = "";
     let errorMsg = "";
 

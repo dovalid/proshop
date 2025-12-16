@@ -20,6 +20,7 @@ import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import { Flipped } from "react-flip-toolkit";
 import anime from "animejs";
 import { IconX, IconCreditCard, IconCash, IconAlertCircle } from "tabler-icons";
+import { API_BASE } from '../config';
 
 export default function Rendeles({ showSnack }) {
   const history = useHistory();
@@ -241,7 +242,7 @@ function RendelesStepper({ values, setValues, error, setError, showSnack }) {
       body: JSON.stringify(data),
     };
     fetch(
-      "https://proshopwebshop2.herokuapp.com/api/save_order",
+      `${API_BASE}/save_order`,
       requestOptions
     )
       .then(function (response) {

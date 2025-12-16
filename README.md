@@ -28,6 +28,4 @@
 * A frontendet a [localhost:8080](localhost:8080)-es porton éred el.
 
 A projekt deploy:
-* [herokun](https://proshopwebshop2.herokuapp.com/)
-
-2020_IB153I-14
+* [herokun](https://proshop-webshop-38e28d785b85.herokuapp.com//)

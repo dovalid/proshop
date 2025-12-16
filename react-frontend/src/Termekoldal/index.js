@@ -24,6 +24,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import Button from '@material-ui/core/Button';
 import Collapse from '@material-ui/core/Collapse';
 import { IconEdit, IconArrowLeft, IconTrash, IconAlertCircle } from 'tabler-icons';
+import { API_BASE } from '../config';
 
 function Termekoldal({ openLoginModal, showSnack }) {
   const { user } = useContext(UserContext);
@@ -61,17 +62,17 @@ function Termekoldal({ openLoginModal, showSnack }) {
   }
 
   useEffect(() => {
-    fetch(`https://proshopwebshop2.herokuapp.com/api/products/${ termekid }`)
+    fetch(`${API_BASE}/products/${ termekid }`)
       .then(response => response.json())
       .then(jsonData => {
         jsonData.kepek = jsonData.kepek.slice(1,-1).split(',').map(url => url.replace(/"/g, ""));
         delete jsonData['hibernateLazyInitializer'];
         setTermek(jsonData);
 
-        fetch(`https://proshopwebshop2.herokuapp.com/api/product_cat_spec/${ jsonData.kategoriaNev }`)
+        fetch(`${API_BASE}/product_cat_spec/${ jsonData.kategoriaNev }`)
           .then(response => response.json())
           .then(kategoria_specifikacioi => {
-            fetch(`https://proshopwebshop2.herokuapp.com/api/product_spec/${ termekid }`)
+            fetch(`${API_BASE}/product_spec/${ termekid }`)
               .then(response => response.json())
               .then(termek_specifikacioi => {
 
@@ -114,7 +115,7 @@ function Termekoldal({ openLoginModal, showSnack }) {
       jelszo: user.jelszo,
     });
 
-    fetch("https://proshopwebshop2.herokuapp.com/api/product/delete", {
+    fetch(`${API_BASE}/product/delete`, {
       method: "POST",
       headers: { "Content-Type": "application/json; charset=utf-8", },
       body: data

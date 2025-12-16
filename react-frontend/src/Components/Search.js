@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext, memo, useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Termekkategoriak } from "../Providers/KategoriakContext"
+import { API_BASE } from '../config';
 import Backdrop from '@material-ui/core/Backdrop';
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
@@ -16,7 +17,7 @@ const Search = memo(({ keresesOpen, handleOpen, handleClose }) => {
   const [kereses, setKereses] = useState('');
 
   useEffect(() => {
-    fetch('https://proshopwebshop2.herokuapp.com/api/products')
+    fetch(`${API_BASE}/products`)
       .then(response => response.json())
       .then(json => {
         setTermekek(json.map(termek => ({

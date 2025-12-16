@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 import Rating from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
 import { IconStar, IconAlertCircle } from 'tabler-icons';
+import { API_BASE } from '../config';
 import Collapse from "@material-ui/core/Collapse";
 import DialogContentText from "@material-ui/core/DialogContentText";
 
@@ -39,7 +40,7 @@ export default function TermekErtekelesek({ termekid, openLoginModal,showSnack }
   }, [termekid]);
 
   function fetchErtekelesek(){
-      fetch(`https://proshopwebshop2.herokuapp.com/api/rating/${ termekid }`)
+      fetch(`${API_BASE}/rating/${ termekid }`)
       .then(response => response.json())
       .then((jsonData) => {
         setErtekelesek(jsonData.map(item => ({ date: item.datum, ertekeles: item.ertekeles, szoveg: item.szoveg, user: item.user })));
@@ -123,7 +124,7 @@ function AddErtekelesModal({isOpen, handleClose, showSnack, termekid, fetchErtek
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({datum: jelenlegi_datum, felhasznaloId: user.id, ertekeles: values.csillag, szoveg: values.komment, termekId: parseInt(termekid), email: user.email, jelszo: user.jelszo})
     };
-    fetch('https://proshopwebshop2.herokuapp.com/api/save_rating', requestOptions)
+    fetch(`${API_BASE}/save_rating`, requestOptions)
     .then(function (response) {
       console.log(response);
       if (response.status === 200) {

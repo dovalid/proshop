@@ -17,6 +17,7 @@ import Badge from '@material-ui/core/Badge';
 import qs from "qs";
 import { IconFilter } from "tabler-icons";
 import { Termekkategoriak } from "../Providers/KategoriakContext";
+import { API_BASE } from '../config';
 
 export default function Kategoriaoldal () {
   const isMobile = useMediaQuery('(max-width:1024px)');
@@ -73,7 +74,7 @@ export default function Kategoriaoldal () {
           const [,, ...slicedSpecifikaciok] = specifikaciok;
           fetchSpecOptions(slicedSpecifikaciok, minAr, maxAr, gyartok);
         } else {
-          fetch(`https://proshopwebshop2.herokuapp.com/api/product_cat_spec/${ termekkategoria }`)
+          fetch(`${API_BASE}/product_cat_spec/${ termekkategoria }`)
             .then(response => response.json())
             .then(jsonData => fetchSpecOptions(jsonData, minAr, maxAr, gyartok))
             .catch(e => console.error(e));
@@ -85,7 +86,7 @@ export default function Kategoriaoldal () {
   const fetchSpecOptions = (specifikaciok, minAr, maxAr, gyartok) => {
     let newSpecifikaciok = specifikaciok;
     Promise.all(newSpecifikaciok.map((spec) =>
-      fetch(`https://proshopwebshop2.herokuapp.com/api/spec_values/${termekkategoria}/${spec.nev}`)
+      fetch(`${API_BASE}/spec_values/${termekkategoria}/${spec.nev}`)
       .then((response) => response.json())
     )).then(specSzempontValues => {
         specSzempontValues.forEach((response, i) => {

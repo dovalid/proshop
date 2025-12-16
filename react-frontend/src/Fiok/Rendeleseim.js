@@ -12,6 +12,7 @@ import AvatarGroup from "@material-ui/lab/AvatarGroup";
 import Skeleton from "@material-ui/lab/Skeleton";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { IconChevronDown } from "tabler-icons";
+import { API_BASE } from '../config';
 
 export default function Rendeleseim({}) {
   const isMobile = useMediaQuery("(max-width:700px)");
@@ -20,15 +21,13 @@ export default function Rendeleseim({}) {
   const loadersAmount = [...Array(2).keys()];
 
   useEffect(() => {
-    fetch(`https://proshopwebshop2.herokuapp.com/api/elozmenyek/${user.id}`)
+    fetch(`${API_BASE}/elozmenyek/${user.id}`)
       .then((response) => response.json())
       .then((json) => {
         let uj_rendelesek = json;
         Promise.all(
           uj_rendelesek.map((rendeles) =>
-            fetch(
-              `https://proshopwebshop2.herokuapp.com/api/product_order/${rendeles.id}`
-            ).then((response) => response.json())
+            fetch(`${API_BASE}/product_order/${rendeles.id}`).then((response) => response.json())
           )
         )
           .then((responseArray) => {

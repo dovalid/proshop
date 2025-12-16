@@ -12,6 +12,7 @@ import FormControl from '@material-ui/core/FormControl';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import { IconEye, IconEyeOff } from 'tabler-icons';
+import { API_BASE } from '../config';
 
 export default function Beallitasok ({ showSnack }) {
   const { user, setUser } = useContext(UserContext);
@@ -114,7 +115,7 @@ function AdatModal({ user, setUser, nev, telefonszam, email, showSnack}) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({nev: user.nev, telszam: user.telszam, email: user.email})
       };
-      fetch('https://proshopwebshop2.herokuapp.com/api/update_user/'+user.id, requestOptions)
+      fetch(`${API_BASE}/update_user/${user.id}`, requestOptions)
         .then(response => response.json())
         .then(function(data) {
           if (data.id !== null) {
@@ -132,7 +133,7 @@ function AdatModal({ user, setUser, nev, telefonszam, email, showSnack}) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({nev: (values.vezeteknev+" "+values.keresztnev), telszam: values.telefonszam, email: values.email})
     };
-    fetch('https://proshopwebshop2.herokuapp.com/api/update_user/'+user.id, requestOptions)
+    fetch(`${API_BASE}/update_user/${user.id}`, requestOptions)
       .catch(error=>console.error(error))
     handleClose();
   };
@@ -356,7 +357,7 @@ function CimModal({ user, setUser, varos, utcaHazszam, ajtoszam, iranyitoszam, a
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({email: user.email, jelszo: user.jelszo, id: user.cim.id, ...values})
     };
-    fetch('https://proshopwebshop2.herokuapp.com/api/update_address/'+user.id, requestOptions)
+          fetch(`${API_BASE}/update_address/${user.id}`, requestOptions)
       .then(handleClose)
       .catch(error=>console.error(error))
   };
@@ -508,7 +509,7 @@ function JelszoModal({user, setUser, jelszo, adat, showSnack}) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({jelszo: values.jelszo2})
     };
-    fetch('https://proshopwebshop2.herokuapp.com/api/update_password/'+user.id, requestOptions)
+        fetch(`${API_BASE}/update_password/${user.id}`, requestOptions)
       .catch(error=>console.error(error))
     handleClose();
   }
