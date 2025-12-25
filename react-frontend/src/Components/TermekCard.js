@@ -8,7 +8,7 @@ const TermekCard = memo(({termek}) => {
   const location = useLocation();
   const termekParsed = {
     ...termek,
-    // kepek: termek.kepek.slice(1,-1).split(',').map(url => url.replace(/"/g, ""))
+    kepek: termek.kepek.slice(1,-1).split(',').map(url => url.replace(/"/g, ""))
   }
   
   const shouldFlip = (prev, current) => {

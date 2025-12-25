@@ -48,15 +48,22 @@ export default function Kategoriaoldal () {
 
     syncStateWithRoute(qs.parse(location.search, { ignoreQueryPrefix: true }));
 
-    fetch(`/dummy/termekek/${ termekkategoria }.json`)
+    fetch(`${API_BASE}/product/${ termekkategoria }`)
       .then(response => response.json())
       .then((newTermekek) => {
         newTermekek.forEach(termek => {
-            termek.specifikacio = {
-              "Ár": { ertek: termek.ar, tipus: "szam" },
-              "Gyártó": { ertek: termek.gyartoNev, tipus: "szoveg" }
-            };
-            return termek
+          fetch(`${API_BASE}/product_spec/${ termek.id }`)
+            .then(response => response.json())
+            .then((termekSpecek) => {
+              termek.specifikacio = {
+                "Ár": { ertek: termek.ar, tipus: "szam" },
+                "Gyártó": { ertek: termek.gyartoNev, tipus: "szoveg" }
+              };
+              termekSpecek.forEach((spec) => {
+                const { nev, mertekegyseg, tipus, leiras } = spec.specificationEntity;
+                termek.specifikacio[nev] = { mertekegyseg, tipus, leiras, ertek: spec.ertek };
+              });
+            })
         });
         setTermekek(newTermekek);
         const minAr = Math.min(...newTermekek.map(termek => termek.ar));
