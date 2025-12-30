@@ -1,6 +1,6 @@
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
-import { IconBrandGitlab } from 'tabler-icons';
+import { IconBrandGithub } from 'tabler-icons';
 import Tooltip from '@material-ui/core/Tooltip';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -19,12 +19,9 @@ export default function Footer () {
         </p>
       </div>
       <div>
-        <p>
-          2020_IB153I-14
-        </p>
         <LightTooltip title="GitLab repo" arrow>
-          <a href="http://gitlab-okt.sed.hu/2020_IB153I-14_webshop/webshop" target="_BLANK" rel="noreferrer">
-            <IconBrandGitlab/>
+          <a href="https://github.com/dovalid/proshop" target="_BLANK" rel="noreferrer">
+            <IconBrandGithub/>
           </a>
         </LightTooltip>
       </div>

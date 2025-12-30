@@ -22,17 +22,17 @@
   p {
     color: var(--text-inverse-soft);
     font-size: 16px;
+    margin-left: 20px;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
   }
 
   > div {
-    width: 100%;
     display: grid;
     align-items: center;
     grid-template-columns: 1fr auto;
-    gap: 40px;
-
-    @media screen and (min-width: 600px) {
-      width: auto;
-    }
   }
 }

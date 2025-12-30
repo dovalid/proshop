@@ -299,18 +299,16 @@
 .footer p {
   color: var(--text-inverse-soft);
   font-size: 16px;
+  margin-left: 20px;
+}
+.footer a {
+  display: flex;
+  align-items: center;
 }
 .footer > div {
-  width: 100%;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr auto;
-  gap: 40px;
-}
-@media screen and (min-width: 600px) {
-  .footer > div {
-    width: auto;
-  }
 }
 
 .search {
