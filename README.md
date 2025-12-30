@@ -1,7 +1,7 @@
 # **Proshop Webshop**
 ## **User guide**
 
-#### **Frontned - Hot reload**
+#### **Frontend - Hot reload**
 * Lépj bele az react-frontend mappába.
 * Telepítsd a függőségeket.
     * "yarn"
