@@ -2170,15 +2170,24 @@ img.kosarEmptyArt {
 .rendeles {
   background: linear-gradient(180deg, var(--color-background) 80px, var(--color-background-secondary) 200px);
   margin: 0;
-  padding-top: 30px;
+  padding-top: 50px;
   z-index: 1300;
+}
+@media screen and (max-width: 800px) {
+  .rendeles {
+    padding-top: 30px;
+  }
+}
+.rendeles .fejlecContainer {
+  padding-bottom: 40px;
 }
 .rendeles .section-label {
   color: var(--text-default-soft);
+  font-size: 18px;
 }
 @media screen and (max-width: 800px) {
   .rendeles .section-label {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 .rendeles::before {
@@ -2278,11 +2287,15 @@ img.kosarEmptyArt {
 }
 
 .rendelesTermekek .kosarWrapper {
-  margin-top: 0;
+  margin-top: -20px;
 }
 .rendelesTermekek .kosar-termek {
   box-shadow: none;
   padding: 20px 0;
+  border-radius: 0;
+}
+.rendelesTermekek .kosar-termek:not(:last-child) {
+  border-bottom: 1px dashed #d8d8d8;
 }
 .rendelesTermekek .kosar-termek .contentWrapper {
   justify-content: flex-start;
@@ -2305,11 +2318,15 @@ img.kosarEmptyArt {
   }
 }
 
+.rendelesOsszegek {
+  padding-top: 15px;
+  border-top: 1px solid #d8d8d8;
+}
 .rendelesOsszegek div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
+  padding: 12px 0;
 }
 .rendelesOsszegek p {
   font-weight: 600;
@@ -2318,16 +2335,17 @@ img.kosarEmptyArt {
 
 .rendelesOsszegek__summary p {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
 }
 .rendelesOsszegek__summary .rendelesOsszegek__total {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
 }
 
 .cornerBrand {
   position: absolute;
-  top: 0;
+  top: -15px;
+  left: -15px;
   transform-origin: 0 0;
 }
 @media screen and (max-width: 1000px) {
@@ -2338,8 +2356,8 @@ img.kosarEmptyArt {
 
 .cornerBrand__logo {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 30px;
+  left: 30px;
 }
 
 .MuiToggleButton-root {

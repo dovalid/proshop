@@ -63,7 +63,7 @@ export default function Rendeles({ showSnack }) {
       easing: "easeOutSine",
       delay: 100,
       transformOrigin: "left top",
-      duration: 400,
+      duration: 200,
     });
   };
 
